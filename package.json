@@ -1,0 +1,37 @@
+{
+  "name": "hypercore-fetch-chat",
+  "version": "1.0.0",
+  "description": "A simple chat app example using hyper URLs and fetch.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RangerMauve/hypercore-fetch-chat.git"
+  },
+  "standard": {
+    "globals": [
+      "Event",
+      "EventTarget"
+    ]
+  },
+  "keywords": [
+    "hypercore",
+    "p2p",
+    "chat",
+    "example"
+  ],
+  "author": "rangermauve <ranger@mauve.moe> (https://mauve.moe/)",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RangerMauve/hypercore-fetch-chat/issues"
+  },
+  "homepage": "https://github.com/RangerMauve/hypercore-fetch-chat#readme",
+  "dependencies": {
+    "@rangermauve/fetch-event-source": "^1.0.0",
+    "hypercore-fetch": "^8.3.1",
+    "minimist": "^1.2.5"
+  }
+}

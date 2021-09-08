@@ -11,12 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/RangerMauve/hypercore-fetch-chat.git"
   },
-  "standard": {
-    "globals": [
-      "Event",
-      "EventTarget"
-    ]
-  },
   "keywords": [
     "hypercore",
     "p2p",

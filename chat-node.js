@@ -10,8 +10,8 @@ const DEFAULT_USERNAME = 'Anonymous'
 // Runs by default
 export async function then () {
   const {
-  hostname =DEFAULT_HOSTNAME,
-  username= DEFAULT_USERNAME
+    hostname = DEFAULT_HOSTNAME,
+    username = DEFAULT_USERNAME
   } = minimist(process.argv.slice(2))
 
   logSystem(`Connecting to ${hostname} as ${username}`)
@@ -55,13 +55,13 @@ export async function then () {
 
   function onText (e) {
     const { username, fromID, content } = e
-    reader.write(null, {ctrl: true, name: 'u'})
+    reader.write(null, { ctrl: true, name: 'u' })
     console.log(`${formatUser(username, fromID)}: ${content}`)
   }
 
   function onIdentity (e) {
     const { username, fromID } = e
-    reader.write(null, {ctrl: true, name: 'u'})
+    reader.write(null, { ctrl: true, name: 'u' })
     logSystem(`new user ${formatUser(username, fromID)}`)
   }
 

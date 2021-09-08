@@ -1,3 +1,6 @@
+/*
+global Event, EventTarget
+*/
 
 import LRU from './LRU.js'
 
@@ -95,7 +98,7 @@ export default class Chat extends EventTarget {
 
       const { id, type, from: rawFrom, content, username } = parsed
 
-      let fromID = rawFrom || peerID
+      const fromID = rawFrom || peerID
 
       if (!id) throw new Error('No ID in message')
 
@@ -125,7 +128,8 @@ export default class Chat extends EventTarget {
   }
 
   async getPeers () {
-    const response = await this.fetch(this.extensionURL)
+    const { fetch } = this
+    const response = await fetch(this.extensionURL)
 
     await response.json()
   }
@@ -146,7 +150,9 @@ export default class Chat extends EventTarget {
 
     this.seenMessages.track(message.id)
 
-    const response = await this.fetch(this.extensionURL, {
+    const { fetch } = this
+
+    const response = await fetch(this.extensionURL, {
       method: 'POST',
       body: JSON.stringify(message)
     })
